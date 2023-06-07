@@ -19,7 +19,7 @@ const parseArguments = (args: string[]): bmiValues => {
 
 
 
-const bmiCalculator = (height: number, weight: number): string => {
+export const bmiCalculator = (height: number, weight: number): string => {
   const result: number = (weight / (height ** 2)) * 10000
   console.log('height----', height);
   console.log('weight----', weight);
