@@ -22,10 +22,9 @@ const parseArguments2 = (args: string[]): number[] => {
   return numbers;
 };
 
-const exerciseCalculator = (array: Array<number>): result => {
+export const exerciseCalculator = (array: Array<number>, target:number): result => {
   const periodLength = array.length;
   const trainingDays = array.filter(n => n > 0).length;
-  const target = 2;
   let success;
   let rating;
   let total = 0;
@@ -73,7 +72,7 @@ const exerciseCalculator = (array: Array<number>): result => {
 
 try {
   const array = parseArguments2(process.argv);
-  const result = exerciseCalculator(array);
+  const result = exerciseCalculator(array, 2);
   console.log(result);
 } catch (error: unknown) {
   let errorMessage = 'Something bad happened.';

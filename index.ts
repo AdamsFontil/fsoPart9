@@ -1,7 +1,9 @@
 import express from 'express';
 import { bmiCalculator } from './bmiCalculator';
+import { exerciseCalculator } from './exerciseCalculator';
 
 const app = express();
+app.use(express.json());
 
 app.get('/hello', (_req, res) => {
   res.send('Hello FullStack');
@@ -20,7 +22,21 @@ app.get('/bmi', (req, res) => {
   res.json({ weight, height, result });
 });
 
-const PORT = 3003;
+
+app.post('/exercises', (req, res) => {
+  const { daily_exercises, target } = req.body;
+
+  if (!daily_exercises || !target) {
+    return res.status(400).json({ error: 'malformated parameters' });
+  }
+
+  const result = exerciseCalculator(daily_exercises, target);
+  return res.json(result);
+});
+
+
+
+const PORT = 3002;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

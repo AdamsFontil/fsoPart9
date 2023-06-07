@@ -11,29 +11,29 @@ const parseArguments = (args: string[]): bmiValues => {
     return {
       height: Number(args[2]),
       weight: Number(args[3])
-    }
+    };
   } else {
     throw new Error('Provided values were not numbers!');
   }
-}
+};
 
 
 
 export const bmiCalculator = (height: number, weight: number): string => {
-  const result: number = (weight / (height ** 2)) * 10000
+  const result: number = (weight / (height ** 2)) * 10000;
   console.log('height----', height);
   console.log('weight----', weight);
-  console.log('result---', result)
+  console.log('result---', result);
   if (result < 18.5) {
-    return 'underweight'
+    return 'underweight';
   } else if (result < 24.9) {
-    return 'normal weight'
+    return 'normal weight';
   } else if (result < 29.9) {
-    return 'overweight'
+    return 'overweight';
   } else {
-    return 'obese'
+    return 'obese';
   }
-}
+};
 
 try {
   const { height, weight } = parseArguments(process.argv);
