@@ -14,4 +14,13 @@ export interface PatientType {
 
 }
 
+export enum Gender {
+  Male = 'male',
+  Female = 'female',
+  Nonbinary = 'nonbinary',
+  Not_Listed = 'not listed',
+}
+
 export type NonSensitivePatientType = Omit<PatientType, 'ssn'>;
+
+export type NewPatientEntry = Omit < PatientType, 'id' >

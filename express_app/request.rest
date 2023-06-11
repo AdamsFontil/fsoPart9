@@ -1,4 +1,14 @@
-GET http://localhost:3000/api/patients
+GET http://localhost:3001/api/patients
 
-//
-GET http://localhost:3000/api/diagnoses
+# GET http://localhost:3000/api/diagnoses
+
+POST http://localhost:3001/api/patients
+Content-Type: application/json
+
+{
+  "name": "Adams Fontil",
+  "dateOfBirth": "2008-05-10",
+  "ssn": "123456789",
+  "gender": "male",
+  "occupation": "kid"
+}
