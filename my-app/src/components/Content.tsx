@@ -3,11 +3,21 @@ interface ContentProps {
   exerciseCount: number;
 }
 
-const Content = (props: ContentProps)  => {
+interface AllCourses {
+  courseParts: ContentProps[];
+}
+
+const Content = (props: AllCourses)  => {
+  console.log('here are the props',props)
   return (
-    <p>
-        {props.name} {props.exerciseCount}
-    </p>
+    <div>
+   {props.courseParts.map((item, index) => (
+    <p key={index}>
+      {item.name} {item.exerciseCount}
+    </p> )
+   )}
+
+  </div>
   )
 };
 

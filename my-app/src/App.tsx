@@ -21,9 +21,7 @@ const App = () => {
   return (
     <div>
       < Header title={courseName} />
-      < Content name={courseParts[0].name} exerciseCount={courseParts[0].exerciseCount} />
-      < Content name={courseParts[1].name} exerciseCount={courseParts[1].exerciseCount} />
-      < Content name={courseParts[2].name} exerciseCount={courseParts[2].exerciseCount} />
+      < Content courseParts={courseParts} />
       <Total courseParts={courseParts} />
     </div>
   );
