@@ -14,6 +14,22 @@ const getPatientsNoSnn = () : NonSensitivePatientType[] => {
   }));
 };
 
+const getOnePatient = (id: string): PatientType | undefined => {
+  console.log('id--', id);
+
+  const patient = patients.find(patient => patient.id === id);
+  console.log('patient--', patient)
+
+  if (patient) {
+    return { ...patient, entries: [] };
+  }
+
+  return undefined;
+};
+
+
+
+
 const addPatient = (entry: NewPatientEntry): PatientType => {
   const id = uuid();
   const newPatientEntry: PatientType = {
@@ -29,5 +45,6 @@ const addPatient = (entry: NewPatientEntry): PatientType => {
 
 export default {
   getPatientsNoSnn,
-  addPatient
+  addPatient,
+  getOnePatient
 };
