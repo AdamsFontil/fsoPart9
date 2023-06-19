@@ -8,6 +8,21 @@ const getAllDiagnoses = () : DiagnoseType[] => {
 };
 
 
+const getOneDiagnose = (id: string): DiagnoseType | undefined => {
+  console.log('id--', id);
+
+  const diagnose = diagnoses.find(diagnose => diagnose.code === id);
+  console.log('diagnose--', diagnose)
+
+  if (diagnose) {
+    return { ...diagnose };
+  }
+
+  return undefined;
+};
+
+
 export default {
-  getAllDiagnoses
+  getAllDiagnoses,
+  getOneDiagnose
 };

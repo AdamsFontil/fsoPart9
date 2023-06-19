@@ -1,6 +1,38 @@
-GET http://localhost:3001/api/patients/d2773336-f723-11e9-8f0b-362b9e155667
+# GET http://localhost:3001/api/patients/d2773822-f723-11e9-8f0b-362b9e155667/entries/
 
-# GET http://localhost:3000/api/diagnoses
+
+
+# GET http://localhost:3001/api/patients
+
+POST http://localhost:3001/api/patients/d2773822-f723-11e9-8f0b-362b9e155667/entries/
+Content-Type: application/json
+
+{
+  "description": "2008-05-10",
+  "date": "123456789",
+  "type": "OccupationalHealthcare",
+  "specialist": "male",
+  "healthCheckRating": 1,
+  "diagnosisCodes": ["N95", "N96"],
+  "discharge": {
+    "date": "2023-06-19",
+    "criteria": "some criteria"
+  },
+  "employerName": "CIA",
+  "sickLeave": {
+    "startDate": "2023-06-19",
+    "endDate": "2023-06-20"
+  }
+
+}
+
+
+
+
+
+
+# GET http://localhost:3001/api/patients/
+
 
 # POST http://localhost:3001/api/patients
 # Content-Type: application/json

@@ -1,0 +1,7 @@
+.date-input input::placeholder {
+  opacity: 0; /* Hide the default placeholder text */
+}
+
+/* * {
+  background-color: red;
+} */
